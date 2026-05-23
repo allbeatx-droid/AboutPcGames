@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AboutPcGames – TikTok Growth Course</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #13131a;
+    --card: #1a1a24;
+    --accent: #00f0a0;
+    --accent2: #ff3c6f;
+    --text: #e8e8f0;
+    --muted: #6b6b80;
+    --border: rgba(255,255,255,0.07);
+    --glow: 0 0 40px rgba(0,240,160,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+    color: var(--text);
+  }
+  .logo span { color: var(--accent); }
+
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color .2s;
+  }
+  nav a:hover { color: var(--accent); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: #000 !important;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: 700 !important;
+    transition: opacity .2s !important;
+  }
+  .nav-cta:hover { opacity: 0.85; color: #000 !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 140px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-blob {
+    position: absolute;
+    width: 700px; height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,240,160,0.12) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 6s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.7; }
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(0,240,160,0.1);
+    border: 1px solid rgba(0,240,160,0.3);
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+    animation: fadeDown .8s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    animation: fadeDown .8s .1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+    display: block;
+  }
+
+  .hero-sub {
+    margin: 28px auto 0;
+    max-width: 560px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--muted);
+    animation: fadeDown .8s .2s ease both;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    margin: 48px 0;
+    animation: fadeDown .8s .3s ease both;
+  }
+
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 6px;
+  }
+
+  .hero-divider {
+    width: 1px; height: 40px;
+    background: var(--border);
+    margin: 0 auto;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: #000;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 18px 48px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: transform .2s, box-shadow .2s;
+    animation: fadeDown .8s .4s ease both;
+    box-shadow: 0 0 0 0 rgba(0,240,160,0);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px rgba(0,240,160,0.35);
+  }
+
+  .price-tag {
+    display: inline-block;
+    margin-left: 16px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    vertical-align: middle;
+  }
+  .price-tag strong { color: var(--text); font-size: 1.4rem; }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION SHARED ── */
+  section { padding: 100px 24px; }
+  .container { max-width: 1060px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    letter-spacing: 0.03em;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+
+  .section-desc {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 1rem;
+    max-width: 580px;
+  }
+
+  /* ── STORY ── */
+  .story { background: var(--surface); }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .story-visual {
+    position: relative;
+  }
+
+  .phone-mockup {
+    width: 240px;
+    margin: 0 auto;
+    display: block;
+    background: var(--card);
+    border-radius: 36px;
+    border: 2px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5), var(--glow);
+    padding: 24px 16px;
+  }
+
+  .phone-screen {
+    background: #000;
+    border-radius: 24px;
+    overflow: hidden;
+    aspect-ratio: 9/16;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px 16px;
+    background: linear-gradient(160deg, #1a0030 0%, #0a0a0f 60%);
+    position: relative;
+  }
+
+  .tiktok-logo-area {
+    position: absolute;
+    top: 16px; left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 0.05em;
+  }
+
+  .sub-counter {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    color: var(--accent);
+    text-align: center;
+    line-height: 1;
+    animation: countUp 2s ease both;
+  }
+  .sub-counter-label {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .floating-badge {
+    position: absolute;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 18px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .fb1 { top: -10px; right: -30px; color: var(--accent); }
+  .fb2 { bottom: 20px; left: -40px; color: var(--accent2); }
+  .fb2 span { display: block; font-size: 1.2rem; font-family: 'Bebas Neue', sans-serif; }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 40px;
+  }
+
+  .t-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .t-dot {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(0,240,160,0.1);
+    border: 2px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    color: var(--accent);
+  }
+
+  .t-text strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .t-text p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── WHAT YOU GET ── */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+
+  .feature-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 28px;
+    transition: border-color .3s, transform .3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .4s ease;
+  }
+
+  .feature-card:hover::before { transform: scaleX(1); }
+  .feature-card:hover { border-color: rgba(0,240,160,0.2); transform: translateY(-4px); }
+
+  .fc-icon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .fc-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+
+  .fc-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+
+  /* ── RESULTS ── */
+  .results { background: var(--surface); }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+
+  .result-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .result-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Decorative fake screenshot placeholders */
+  .result-img svg { width: 60%; opacity: 0.15; }
+
+  .result-img-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .result-stat-big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .result-stat-label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .result-bar {
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    width: 0;
+    transition: width 1.5s ease;
+  }
+  .result-bar.animate { width: 100%; }
+
+  .result-caption {
+    padding: 20px 24px;
+  }
+  .result-caption strong { display: block; margin-bottom: 6px; font-weight: 600; }
+  .result-caption p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  /* Big result number cards */
+  .result-numbers {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .rn-card {
+    background: rgba(0,240,160,0.05);
+    border: 1px solid rgba(0,240,160,0.15);
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+  }
+
+  .rn-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .rn-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 8px; }
+
+  /* ── COURSE CONTENT ── */
+  .modules {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 60px;
+  }
+
+  .module {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    align-items: center;
+    gap: 20px;
+    transition: border-color .3s;
+  }
+  .module:hover { border-color: rgba(0,240,160,0.2); }
+
+  .module-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--accent);
+    text-align: center;
+  }
+
+  .module-title { font-weight: 600; margin-bottom: 4px; }
+  .module-desc { font-size: 0.83rem; color: var(--muted); }
+
+  .module-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .tag-video { background: rgba(255,60,111,0.1); color: var(--accent2); border: 1px solid rgba(255,60,111,0.2); }
+  .tag-info { background: rgba(0,240,160,0.08); color: var(--accent); border: 1px solid rgba(0,240,160,0.2); }
+  .tag-strategy { background: rgba(255,200,0,0.08); color: #ffc800; border: 1px solid rgba(255,200,0,0.2); }
+
+  /* ── PRICING ── */
+  .pricing { background: var(--surface); }
+
+  .pricing-card {
+    max-width: 480px;
+    margin: 60px auto 0;
+    background: var(--card);
+    border: 1px solid rgba(0,240,160,0.3);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--glow);
+  }
+
+  .pricing-head {
+    background: linear-gradient(135deg, rgba(0,240,160,0.15), rgba(0,240,160,0.05));
+    padding: 40px 40px 32px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pricing-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .price sup { font-size: 2rem; vertical-align: top; margin-top: 12px; display: inline-block; }
+  .price-period { font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
+
+  .pricing-body { padding: 36px 40px; }
+
+  .pricing-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  .pricing-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .pricing-list li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .btn-buy {
+    display: block;
+    width: 100%;
+    background: var(--accent);
+    color: #000;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: transform .2s, box-shadow .2s;
+  }
+
+  .btn-buy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0,240,160,0.4);
+  }
+
+  .guarantee {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  /* ── FAQ ── */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 60px;
+  }
+
+  .faq-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .faq-q {
+    padding: 22px 28px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    user-select: none;
+  }
+
+  .faq-q .arrow {
+    color: var(--accent);
+    font-size: 1.2rem;
+    transition: transform .3s;
+    flex-shrink: 0;
+  }
+
+  .faq-a {
+    padding: 0 28px;
+    max-height: 0;
+    overflow: hidden;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.8;
+    transition: max-height .4s ease, padding .4s;
+  }
+
+  .faq-item.open .faq-a {
+    max-height: 300px;
+    padding: 0 28px 22px;
+  }
+  .faq-item.open .arrow { transform: rotate(45deg); }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  footer .logo { font-size: 1.2rem; }
+  footer p { font-size: 0.82rem; color: var(--muted); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    nav a:not(.nav-cta) { display: none; }
+    .hero-stats { gap: 24px; flex-wrap: wrap; }
+    .story-grid, .features-grid, .results-grid { grid-template-columns: 1fr; }
+    .module { grid-template-columns: 36px 1fr; }
+    .module-tags { display: none; }
+    .result-numbers { grid-template-columns: 1fr; }
+    footer { flex-direction: column; text-align: center; }
+    .pricing-head, .pricing-body { padding: 28px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">About<span>PcGames</span></div>
+  <div style="display:flex;gap:32px;align-items:center;">
+    <a href="#story">My Story</a>
+    <a href="#course">Course</a>
+    <a href="#results">Results</a>
+    <a href="#pricing" class="nav-cta">Get the Course — €25</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob"></div>
+  <div style="position:relative;z-index:1;">
+    <div class="hero-badge">🎮 TikTok Growth Blueprint</div>
+    <h1>From 0 to<em>130K Followers</em></h1>
+    <p class="hero-sub">
+      The exact strategy, mindset, and system I used to grow a TikTok account from zero — and earn <strong style="color:var(--text);">€1,500+</strong> from the Creator Rewards Program.
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">130K</div>
+        <div class="stat-label">TikTok Followers</div>
+      </div>
+      <div style="width:1px;background:var(--border);align-self:stretch;"></div>
+      <div class="stat-item">
+        <div class="stat-num">€1,500+</div>
+        <div class="stat-label">Creator Rewards</div>
+      </div>
+      <div style="width:1px;background:var(--border);align-self:stretch;"></div>
+      <div class="stat-item">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Starting Point</div>
+      </div>
+    </div>
+    <div>
+      <a href="#pricing" class="btn-primary">Get Full Course — €25</a>
+    </div>
+    <p style="margin-top:16px;font-size:0.8rem;color:var(--muted);">One-time payment. Instant access. No subscriptions.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-visual">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <div class="tiktok-logo-area">TikTok</div>
+            <div>
+              <div class="sub-counter">130K</div>
+              <div class="sub-counter-label">Followers</div>
+            </div>
+          </div>
+        </div>
+        <div class="floating-badge fb1">📈 Growing daily</div>
+        <div class="floating-badge fb2">
+          <span>€1,500+</span>
+          Creator Rewards
+        </div>
+      </div>
+      <div>
+        <div class="section-label">My Story</div>
+        <h2 class="section-title">I Started With <br>Absolutely Nothing</h2>
+        <p class="section-desc">No camera. No experience. No followers. Just a gaming PC and a clear goal. I spent months testing every strategy until I found what actually works — and documented every step of it.</p>
+        <div class="timeline">
+          <div class="t-item">
+            <div class="t-dot">01</div>
+            <div class="t-text">
+              <strong>Day 1 — Zero Followers</strong>
+              <p>Created my account from scratch. No audience, no clue what content would work. Just starting.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot">02</div>
+            <div class="t-text">
+              <strong>Month 3 — First Viral Video</strong>
+              <p>After testing dozens of formats, one video exploded. This changed everything about my strategy.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot">03</div>
+            <div class="t-text">
+              <strong>Month 8 — 130K Followers</strong>
+              <p>Consistent growth using a proven system. The algorithm started working for me, not against me.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot">04</div>
+            <div class="t-text">
+              <strong>€1,500+ Earned</strong>
+              <p>Qualified for and maximised the TikTok Creator Rewards Program — pure passive income from views.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section id="course">
+  <div class="container">
+    <div class="section-label">Full Course</div>
+    <h2 class="section-title">Everything You Need<br>Inside One Course</h2>
+    <p class="section-desc">Videos, strategies, screenshots and real data. No fluff — only what actually moved the needle for me.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="fc-icon">🎬</span>
+        <div class="fc-title">Step-by-Step Video Lessons</div>
+        <p class="fc-desc">Watch exactly how I set up my account, structure my content, and optimise each video for maximum reach.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">🧠</span>
+        <div class="fc-title">Growth Strategy & Algorithm</div>
+        <p class="fc-desc">Deep-dive into how the TikTok algorithm works in the PC gaming niche and how to consistently trigger it.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">💰</span>
+        <div class="fc-title">Creator Rewards Breakdown</div>
+        <p class="fc-desc">How to qualify, how views translate to money, and how I earned €1,500+ — with real payment screenshots.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">📸</span>
+        <div class="fc-title">Real Results & Proof</div>
+        <p class="fc-desc">Screenshots of follower graphs, analytics dashboards, and Creator Rewards earnings at every stage.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">🎮</span>
+        <div class="fc-title">PC Gaming Niche Tactics</div>
+        <p class="fc-desc">Specific hooks, titles, and content formats that perform best in the PC gaming space on TikTok right now.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">📅</span>
+        <div class="fc-title">Posting System & Schedule</div>
+        <p class="fc-desc">The exact posting frequency, timing, and consistency system that kept my account growing every single week.</p>
+      </div>
+    </div>
+
+    <!-- Module List -->
+    <div class="modules">
+      <div class="module">
+        <div class="module-num">01</div>
+        <div>
+          <div class="module-title">Account Setup & Niche Selection</div>
+          <div class="module-desc">Build the right foundation from day one — profile, bio, and content direction.</div>
+        </div>
+        <div class="module-tags">
+          <span class="tag tag-video">Video</span>
+          <span class="tag tag-info">Info</span>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-num">02</div>
+        <div>
+          <div class="module-title">Understanding the TikTok Algorithm</div>
+          <div class="module-desc">How the For You Page works and the signals that push your content to thousands.</div>
+        </div>
+        <div class="module-tags">
+          <span class="tag tag-strategy">Strategy</span>
+          <span class="tag tag-info">Info</span>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-num">03</div>
+        <div>
+          <div class="module-title">Creating Viral PC Gaming Content</div>
+          <div class="module-desc">Hooks, pacing, editing tricks, and formats that made my videos blow up.</div>
+        </div>
+        <div class="module-tags">
+          <span class="tag tag-video">Video</span>
+          <span class="tag tag-strategy">Strategy</span>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-num">04</div>
+        <div>
+          <div class="module-title">Growth Acceleration — 0 to 10K</div>
+          <div class="module-desc">The hardest phase. The specific tactics I used to break through the early plateau.</div>
+        </div>
+        <div class="module-tags">
+          <span class="tag tag-strategy">Strategy</span>
+          <span class="tag tag-video">Video</span>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-num">05</div>
+        <div>
+          <div class="module-title">Scaling to 130K & Staying Consistent</div>
+          <div class="module-desc">Maintaining quality, avoiding burnout, and compounding your growth over time.</div>
+        </div>
+        <div class="module-tags">
+          <span class="tag tag-info">Info</span>
+          <span class="tag tag-strategy">Strategy</span>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-num">06</div>
+        <div>
+          <div class="module-title">Creator Rewards Program — Full Guide</div>
+          <div class="module-desc">Eligibility, earnings breakdown, how to maximise RPM, and real payment proof.</div>
+        </div>
+        <div class="module-tags">
+          <span class="tag tag-video">Video</span>
+          <span class="tag tag-info">Info</span>
+          <span class="tag tag-strategy">Strategy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results" id="results">
+  <div class="container">
+    <div class="section-label">Proof & Results</div>
+    <h2 class="section-title">Real Numbers,<br>Real Proof</h2>
+    <p class="section-desc">Every claim in this course is backed by real screenshots, real analytics, and real earnings. No fake numbers.</p>
+
+    <div class="result-numbers">
+      <div class="rn-card">
+        <div class="rn-num">130K</div>
+        <div class="rn-label">Total Followers</div>
+      </div>
+      <div class="rn-card">
+        <div class="rn-num">€1,500+</div>
+        <div class="rn-label">Creator Rewards Earned</div>
+      </div>
+      <div class="rn-card">
+        <div class="rn-num">~8 Months</div>
+        <div class="rn-label">Time to Achieve This</div>
+      </div>
+    </div>
+
+    <div class="results-grid" style="margin-top:32px;">
+      <div class="result-card">
+        <div class="result-img" style="background: linear-gradient(135deg, #0d1f0d, #0a0a0f);">
+          <div class="result-img-inner">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--muted);letter-spacing:.1em;">FOLLOWER GROWTH</div>
+            <div style="display:flex;align-items:flex-end;gap:4px;margin-top:8px;">
+              <div style="width:20px;height:20px;background:var(--accent);border-radius:2px;opacity:.4;"></div>
+              <div style="width:20px;height:30px;background:var(--accent);border-radius:2px;opacity:.5;"></div>
+              <div style="width:20px;height:45px;background:var(--accent);border-radius:2px;opacity:.6;"></div>
+              <div style="width:20px;height:60px;background:var(--accent);border-radius:2px;opacity:.7;"></div>
+              <div style="width:20px;height:90px;background:var(--accent);border-radius:2px;opacity:.85;"></div>
+              <div style="width:20px;height:130px;background:var(--accent);border-radius:2px;"></div>
+            </div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--accent);margin-top:12px;">0 → 130K</div>
+          </div>
+        </div>
+        <div class="result-bar animate" style="width:100%;"></div>
+        <div class="result-caption">
+          <strong>Follower Growth Analytics</strong>
+          <p>Screenshots of the growth curve from day 1 to 130,000 followers — included in the course.</p>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-img" style="background: linear-gradient(135deg, #1f0d0d, #0a0a0f);">
+          <div class="result-img-inner">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--muted);letter-spacing:.1em;">CREATOR REWARDS</div>
+            <div style="margin-top:12px;">
+              <div style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Total Earned</div>
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--accent2);line-height:1;">€1,500+</div>
+              <div style="display:flex;gap:6px;margin-top:16px;flex-wrap:wrap;justify-content:center;">
+                <div style="padding:6px 12px;background:rgba(255,60,111,.1);border:1px solid rgba(255,60,111,.2);border-radius:6px;font-size:.75rem;color:var(--accent2);">Month 1</div>
+                <div style="padding:6px 12px;background:rgba(255,60,111,.15);border:1px solid rgba(255,60,111,.25);border-radius:6px;font-size:.75rem;color:var(--accent2);">Month 2</div>
+                <div style="padding:6px 12px;background:rgba(255,60,111,.2);border:1px solid rgba(255,60,111,.3);border-radius:6px;font-size:.75rem;color:var(--accent2);">Month 3+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="result-bar" style="background:linear-gradient(90deg,var(--accent2),var(--accent));width:100%;"></div>
+        <div class="result-caption">
+          <strong>Creator Rewards Earnings</strong>
+          <p>Real payment screenshots from TikTok's Creator Rewards Program shown inside the course.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container" style="text-align:center;">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">One Price.<br>Everything Included.</h2>
+    <p class="section-desc" style="margin:0 auto;">No upsells. No monthly fees. Pay once, access everything — the full course, strategies, videos, and proof.</p>
+
+    <div class="pricing-card">
+      <div class="pricing-head">
+        <div class="pricing-label">Full Course Access</div>
+        <div class="price"><sup>€</sup>25</div>
+        <div class="price-period">One-time payment — yours forever</div>
+      </div>
+      <div class="pricing-body">
+        <ul class="pricing-list">
+          <li>6 full modules with video lessons</li>
+          <li>Complete TikTok growth strategy from 0 to 130K</li>
+          <li>Creator Rewards Program full breakdown</li>
+          <li>Real screenshots and proof of results</li>
+          <li>PC Gaming niche content tactics</li>
+          <li>Posting system and weekly schedule template</li>
+          <li>Algorithm explainer — how to game the For You Page</li>
+          <li>Lifetime access — including future updates</li>
+        </ul>
+        <a href="#" class="btn-buy">Buy Now — €25 One-Time</a>
+        <p class="guarantee">🔒 Secure payment · Instant access after purchase</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Common Questions</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do I need any prior experience with TikTok?
+          <span class="arrow">+</span>
+        </div>
+        <div class="faq-a">Not at all. The course starts from absolute zero — creating your first account, choosing your niche, and building a system from scratch. It's designed for complete beginners.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Is this only for PC gaming content?
+          <span class="arrow">+</span>
+        </div>
+        <div class="faq-a">The core growth strategies work for any niche. However, the specific tactics, formats, and hooks are tailored for the PC gaming space — which is where I built my 130K following.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How long does it take to see results?
+          <span class="arrow">+</span>
+        </div>
+        <div class="faq-a">It took me around 8 months to reach 130K. Results vary based on consistency and effort, but the strategies in this course are designed to accelerate that timeline significantly compared to going it alone.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Will I get access to real proof and screenshots?
+          <span class="arrow">+</span>
+        </div>
+        <div class="faq-a">Yes. The course includes real analytics screenshots, follower growth graphs, and Creator Rewards payment proof. Everything is shown openly — no fabricated numbers.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What do I get for the €25?
+          <span class="arrow">+</span>
+        </div>
+        <div class="faq-a">You get instant, lifetime access to the full course: 6 modules with video lessons, the complete growth strategy, Creator Rewards breakdown, real proof and screenshots, and any future updates I add.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">About<span>PcGames</span></div>
+  <p>© 2025 AboutPcGames. All rights reserved.</p>
+  <p style="color:var(--muted);font-size:.8rem;">Results may vary based on individual effort and consistency.</p>
+</footer>
+
+<script>
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    item.classList.toggle('open');
+  }
+
+  // Animate result bars on scroll
+  const bars = document.querySelectorAll('.result-bar');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = '100%';
+        e.target.style.transition = 'width 1.5s ease';
+      }
+    });
+  }, { threshold: 0.3 });
+  bars.forEach(b => observer.observe(b));
+</script>
+</body>
+</html>
