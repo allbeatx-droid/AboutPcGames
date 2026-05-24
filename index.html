@@ -276,6 +276,18 @@
     padding: 20px 16px;
     background: linear-gradient(160deg, #1a0030 0%, #0a0a0f 60%);
     position: relative;
+	
+.tiktok-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
   }
 
   .tiktok-logo-area {
@@ -747,7 +759,7 @@
       </div>
     </div>
     <div>
-      <a href="#pricing" class="btn-primary">Get Full Course — €25</a>
+<a href="https://buy.stripe.com/7sY8wO4Se8yN1EKbTh5J600" target="_blank" class="btn-primary">Get Full Course — €25</a>
     </div>
     <p style="margin-top:16px;font-size:0.8rem;color:var(--muted);">One-time payment. Instant access. No subscriptions.</p>
   </div>
@@ -760,10 +772,14 @@
       <div class="story-visual">
         <div class="phone-mockup">
           <div class="phone-screen">
-            <div class="tiktok-logo-area">TikTok</div>
-            <div>
-              <div class="sub-counter">130K</div>
-              <div class="sub-counter-label">Followers</div>
+		  
+
+            <div class="tiktok-logo-area" style="z-index:2;">TikTok</div>
+					  <img src="images/tiktok.png" alt="TikTok Profile" class="tiktok-img">
+            <div style="position: relative; z-index: 2;">
+    <div class="sub-counter">130K</div>
+    <div class="sub-counter-label">Followers</div>
+</div>
             </div>
           </div>
         </div>
@@ -1018,7 +1034,9 @@
           <li>Algorithm explainer — how to game the For You Page</li>
           <li>Lifetime access — including future updates</li>
         </ul>
-        <a href="#" class="btn-buy">Buy Now — €25 One-Time</a>
+		
+<
+
         <p class="guarantee">🔒 Secure payment · Instant access after purchase</p>
       </div>
     </div>
