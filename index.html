@@ -1004,6 +1004,7 @@ footer a:hover {
 </section>
 
 <!-- PRICING -->
+  
 <section class="pricing" id="pricing">
   <div class="container" style="text-align:center;">
     <div class="section-label">Pricing</div>
@@ -1032,6 +1033,62 @@ footer a:hover {
       </div>
     </div>
   </div>
+  .shop-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:35px;
+}
+
+.product-card{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:18px;
+padding:20px;
+text-align:center;
+transition:.3s;
+}
+
+.product-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 30px rgba(0,240,160,.18);
+}
+
+.product-card img{
+width:100%;
+border-radius:12px;
+margin-bottom:18px;
+}
+
+.product-card h3{
+margin-bottom:10px;
+}
+
+.product-card p{
+color:var(--muted);
+font-size:.95rem;
+margin-bottom:20px;
+}
+
+.price{
+font-size:1.5rem;
+font-weight:bold;
+color:var(--accent);
+margin-bottom:20px;
+}
+
+.buy-btn{
+display:inline-block;
+padding:14px 26px;
+background:var(--accent);
+color:#000;
+font-weight:bold;
+border-radius:10px;
+text-decoration:none;
+}
+
+.buy-btn:hover{
+background:var(--accent2);
+}
 </section>
 
 <!-- FAQ -->
