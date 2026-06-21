@@ -1,40 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5921279158711461"
-     crossorigin="anonymous"></script>
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TFR1C43PT"></script>
-
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-8TFR1C43PT');
-</script>
-
-<!-- Vercel Web Analytics -->
-<script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AboutPcGames – TikTok Growth Course</title>
-  
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
 <style>
-.logo-subtext {
-    font-size: 0.8rem;
-    background: linear-gradient(90deg, #ffffff, #00f0a0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 1px;
-    margin-top: -8px;
-}
   :root {
     --bg: #0a0a0f;
     --surface: #13131a;
@@ -84,15 +55,11 @@ gtag('config', 'G-8TFR1C43PT');
     border-bottom: 1px solid var(--border);
   }
 
- .logo {
+  .logo {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.8rem;
-
-    background: linear-gradient(90deg, #ffffff 50%, #00f0a0 50%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    letter-spacing: 2px;
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+    color: var(--text);
   }
   .logo span { color: var(--accent); }
 
@@ -295,15 +262,9 @@ gtag('config', 'G-8TFR1C43PT');
     overflow: hidden;
     box-shadow: 0 40px 80px rgba(0,0,0,0.5), var(--glow);
     padding: 24px 16px;
-.tiktok-img {
-    width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    border-radius: 28px;
-      margin-top: 60px;
   }
 
-.phone-screen {
+  .phone-screen {
     background: #000;
     border-radius: 24px;
     overflow: hidden;
@@ -311,14 +272,15 @@ gtag('config', 'G-8TFR1C43PT');
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
+    justify-content: flex-end;
+    padding: 20px 16px;
+    background: linear-gradient(160deg, #1a0030 0%, #0a0a0f 60%);
+    position: relative;
   }
 
   .tiktok-logo-area {
     position: absolute;
-    top: 45px; left: 50%;
+    top: 16px; left: 50%;
     transform: translateX(-50%);
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1rem;
@@ -326,14 +288,13 @@ gtag('config', 'G-8TFR1C43PT');
     letter-spacing: 0.05em;
   }
 
-.sub-counter {
+  .sub-counter {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.4rem;
     color: var(--accent);
     text-align: center;
     line-height: 1;
     animation: countUp 2s ease both;
-    margin-top: 120px;
   }
   .sub-counter-label {
     font-size: 0.7rem;
@@ -751,15 +712,12 @@ gtag('config', 'G-8TFR1C43PT');
 
 <!-- NAV -->
 <nav>
- <div class="logo">
-    AboutPcGames
-    <div class="logo-subtext">We Are Many, We Are One!</div>
-</div>
+  <div class="logo">About<span>PcGames</span></div>
   <div style="display:flex;gap:32px;align-items:center;">
     <a href="#story">My Story</a>
     <a href="#course">Course</a>
     <a href="#results">Results</a>
-   <a href="https://buy.stripe.com/7sY8wO4Se8yN1EKbTh5J600" target="_blank" class="nav-cta">Get the Course — €25</a>
+    <a href="#pricing" class="nav-cta">Get the Course — €25</a>
   </div>
 </nav>
 
@@ -789,7 +747,7 @@ gtag('config', 'G-8TFR1C43PT');
       </div>
     </div>
     <div>
-    <a href="https://buy.stripe.com/7sY8wO4Se8yN1EKbTh5J600" target="_blank" class="btn-primary">Get Full Course — €25</a>
+      <a href="#pricing" class="btn-primary">Get Full Course — €25</a>
     </div>
     <p style="margin-top:16px;font-size:0.8rem;color:var(--muted);">One-time payment. Instant access. No subscriptions.</p>
   </div>
@@ -802,7 +760,6 @@ gtag('config', 'G-8TFR1C43PT');
       <div class="story-visual">
         <div class="phone-mockup">
           <div class="phone-screen">
-            <img src="tiktok.png.png" class="tiktok-img">
             <div class="tiktok-logo-area">TikTok</div>
             <div>
               <div class="sub-counter">130K</div>
@@ -1117,8 +1074,15 @@ gtag('config', 'G-8TFR1C43PT');
 <!-- FOOTER -->
 <footer>
   <div class="logo">About<span>PcGames</span></div>
-  <p>© 2025 AboutPcGames. All rights reserved.</p>
-  <p style="color:var(--muted);font-size:.8rem;">Results may vary based on individual effort and consistency.</p>
+
+    <div style="display:flex;gap:20px;flex-wrap:wrap;">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+    </div>
+
+    <p>© 2026 AboutPcGames. All rights reserved.</p>
 </footer>
 
 <script>
