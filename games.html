@@ -14,11 +14,23 @@
             padding: 20px;
         }
 
-        h1 {
-            text-align: center;
+       h1 {
             color: #45f3ff;
-            margin-bottom: 40px;
+            font-size: 2rem;
         }
+
+        @media (max-width: 768px) {
+            div[style*="justify-content: space-between"] {
+                flex-direction: column;
+                gap: 20px;
+            }
+            h1 {
+                position: static !important;
+                transform: none !important;
+                order: -1; /* Pune titlul deasupra pe mobil dacă dorești, sau lasă-l jos */
+            }
+        
+        
 
         .games-grid {
             display: grid;
@@ -98,7 +110,11 @@
 </head>
 <body>
 
-    <h1>PC Game Deals</h1>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
+    <a href="index.html" style="color: #45f3ff; text-decoration: none; font-size: 1.6rem; font-weight: bold;">AboutPcGames</a>
+    <h1 style="margin: 0; position: absolute; left: 50%; transform: translateX(-50%);">PC Game Deals</h1>
+    <div style="width: 150px;"></div> <!-- Păstrează titlul centrat perfect -->
+</div>
 
 <div class="games-grid">
     
