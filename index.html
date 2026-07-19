@@ -821,13 +821,30 @@ footer a:hover {
         text-align: center;
     }
     
-    /* Permite link-urilor din mijloc să se așeze frumos */
-    nav div, nav ul, .nav-links { 
+ @media (max-width: 768px) {
+    nav {
+        position: static !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding: 15px !important;
+        text-align: center !important;
         display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 10px !important;
     }
+    
+    /* Forțează afișarea absolut oricărui element din interiorul meniului */
+    nav *, .nav-links, .menu, .nav-menu, nav ul, nav li, nav a { 
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Asigură-te că link-urile au un pic de spațiu între ele și textul e vizibil */
+    nav a {
+        padding: 8px 12px !important;
+        margin: 5px !important;
+        color: #ffffff !important;
+    }
+}
 }
 </style>
     <script>
