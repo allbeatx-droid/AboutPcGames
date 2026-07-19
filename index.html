@@ -812,7 +812,23 @@ footer a:hover {
   }
 
 }
- 
+ @media (max-width: 768px) {
+    nav {
+        position: static !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding: 15px !important;
+        text-align: center;
+    }
+    
+    /* Permite link-urilor din mijloc să se așeze frumos */
+    nav div, nav ul, .nav-links { 
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+    }
+}
 </style>
     <script>
   window.va = window.va || function () {
