@@ -14,23 +14,26 @@
             padding: 20px;
         }
 
-       h1 {
-            color: #45f3ff;
-            font-size: 2rem;
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto 20px auto;
+            padding: 0 10px;
         }
 
-        @media (max-width: 768px) {
-            div[style*="justify-content: space-between"] {
-                flex-direction: column;
-                gap: 20px;
-            }
-            h1 {
-                position: static !important;
-                transform: none !important;
-                order: -1; /* Pune titlul deasupra pe mobil dacă dorești, sau lasă-l jos */
-            }
-        
-        
+        .nav-link-home {
+            color: #45f3ff;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        h1 {
+            text-align: center;
+            color: #45f3ff;
+            margin-bottom: 40px;
+            margin-top: 10px;
+        }
 
         .games-grid {
             display: grid;
@@ -59,7 +62,6 @@
             border-color: #45f3ff;
         }
 
-        /* Imaginea se va încadra complet fără să taie titlul */
         .game-card img {
             width: 100%;
             height: 180px;
@@ -69,12 +71,12 @@
         }
 
         .game-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    min-height: 44px; /* Forțează titlurile scurte să ocupe spațiu de 2 rânduri */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .game-card .edition {
@@ -110,12 +112,17 @@
 </head>
 <body>
 
-<div style="margin-bottom: 30px;">
-    <a href="index.html" style="color: #45f3ff; text-decoration: none; font-size: 1.2rem; font-weight: bold; display: inline-block; margin-bottom: 10px;">← AboutPcGames</a>
-    <h1 style="text-align: center; color: #45f3ff; margin: 0;">PC Game Deals</h1>
-</div>
+    <div class="header-container">
+        <a href="index.html" class="nav-link-home">AboutPcGames</a>
+    </div>
 
-<div class="games-grid">
+    <h1>PC Game Deals</h1>
+
+    <div class="games-grid">
+        
+        <!-- Game Card: The Mound: Omen of Cthulhu -->
+        <div class="game-card">
+            <img src="Game1.png.png" alt="The Mound: Omen of Cthulhu">
     
     <!-- Game Card: The Mound: Omen of Cthulhu -->
     <div class="game-card">
