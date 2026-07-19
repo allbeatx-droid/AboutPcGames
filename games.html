@@ -3,107 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy PC Games - AboutPCGames</title>
+    <title>Magazin Jocuri - AboutPCGames</title>
     <style>
+        /* Stiluri generale adaptate pentru Dark Mode */
         body {
-            font-family: Arial, sans-serif;
             background-color: #0b0c10;
-            color: white;
+            color: #c5c6c7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 20px;
         }
-        nav {
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #1f2833;
-        }
-        nav a {
-            text-decoration: none;
-            font-size: 16px;
-        }
+
         h1 {
             text-align: center;
+            color: #45f3ff;
             margin-bottom: 40px;
         }
-        /* Grid-ul care așează jocurile câte 4 pe linie */
+
+        /* Grila responsivă pe 4 coloane */
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
         }
-        /* Cardul fiecărui joc */
+
+        /* Design-ul unui card de joc */
         .game-card {
             background-color: #1f2833;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            border: 1px solid #45f3ff;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border: 1px solid #2f3b4c;
+            transition: transform 0.2s;
         }
-        /* Spațiul pentru poza jocului */
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            border-color: #45f3ff;
+        }
+
+        /* Stil pentru imaginea urcată */
         .game-card img {
             width: 100%;
-            height: auto;
+            height: 250px;
+            object-fit: cover;
             border-radius: 6px;
-            margin-bottom: 15px;
             background-color: #0b0c10;
         }
+
         .game-card h3 {
             font-size: 18px;
-            margin: 10px 0 5px 0;
+            margin: 15px 0 5px 0;
+            color: #ffffff;
         }
+
         .game-card .edition {
             font-size: 14px;
             color: #c5c6c7;
             margin-bottom: 10px;
         }
-        /* Stil pentru preț */
+
         .game-card .price {
             font-size: 20px;
             font-weight: bold;
             color: #45f3ff;
             margin-bottom: 15px;
         }
-        /* Butonul de cumpărare */
-        .btn {
-            display: inline-block;
-            background-color: #00ff88;
+
+        /* Butonul de cumpărare (Link Afiliat) */
+        .buy-btn {
+            background-color: #45f3ff;
             color: #0b0c10;
-            padding: 10px;
             text-decoration: none;
+            padding: 10px 20px;
             border-radius: 5px;
             font-weight: bold;
-            transition: 0.3s;
+            width: 80%;
+            transition: background 0.2s;
         }
-        .btn:hover {
-            background-color: #45f3ff;
+
+        .buy-btn:hover {
+            background-color: #1f2833;
+            color: #45f3ff;
+            border: 1px solid #45f3ff;
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" style="color: white; margin-right: 15px;">Home</a>
-        <a href="games.html" style="color: #00ff88; font-weight: bold;">Buy PC Games</a>
-    </nav>
-
-    <h1>Recommended PC Games</h1>
+    <h1>Oferte Jocuri PC</h1>
 
     <div class="games-grid">
         
-        <!-- JOCUL 1 -->
+        <!-- Card Joc: The Mound: Omen of Cthulhu -->
         <div class="game-card">
-            <!-- Pune numele pozei tale aici după ce o urci pe GitHub, ex: "cthulhu.jpg" -->
-            <img src="placeholder.jpg" alt="The Mound: Omen of Cthulhu">
+            <img src="Game1.png.png" alt="The Mound: Omen of Cthulhu">
             <h3>The Mound: Omen of Cthulhu</h3>
-            <div class="edition">Deluxe Edition</div>
-            <div class="price">19.99 €</div>
-            <a href="https://go.loaded.com/n4jKeo" class="btn" target="_blank" rel="noopener noreferrer">Buy Now</a>
+            <div class="edition">Standard Edition</div>
+            <div class="price">16.49 €</div>
+            <a href="https://loaded.gg/e/TheMound?p=aboutpcgames" target="_blank" class="buy-btn">Cumpără Acum</a>
         </div>
+
+        <!-- Aici vei putea adăuga următoarele jocuri în viitor copiind structura de mai sus -->
 
     </div>
 
