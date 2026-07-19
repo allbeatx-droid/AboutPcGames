@@ -16,8 +16,8 @@
 
         .header-container {
             max-width: 1200px;
-            margin: 0 auto 20px auto;
-            padding: 0 10px;
+            margin: 0 auto 10px auto;
+            padding: 0 15px;
         }
 
         .nav-link-home {
@@ -37,7 +37,7 @@
 
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
@@ -108,6 +108,24 @@
             color: #45f3ff;
             border: 1px solid #45f3ff;
         }
+
+        @media (max-width: 992px) {
+            .games-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .games-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
+                padding: 0 15px;
+            }
+            .game-card {
+                width: 100%;
+                max-width: 380px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -119,7 +137,6 @@
     <h1>PC Game Deals</h1>
 
     <div class="games-grid">
-        
         <!-- Game Card: The Mound: Omen of Cthulhu -->
         <div class="game-card">
             <img src="Game1.png.png" alt="The Mound: Omen of Cthulhu">
